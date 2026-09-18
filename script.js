@@ -175,12 +175,23 @@ document.getElementById("usernameRun").addEventListener("click",()=>{
   document.getElementById("usernameResult").textContent=a[Math.floor(Math.random()*a.length)]+b[Math.floor(Math.random()*b.length)]+Math.floor(Math.random()*1000);
 });
 
-const uuidTool=document.getElementById("uuid");
 function generateUuid(){
-  if(!uuidTool)return;
   const result=document.getElementById("uuidResult");
-  if(result)result.textContent=crypto.randomUUID();
+  if(!result)return;
+  if(window.crypto&&typeof window.crypto.randomUUID==="function"){
+    result.textContent=window.crypto.randomUUID();
+    return;
+  }
+  if(window.crypto&&typeof window.crypto.getRandomValues==="function"){
+    const bytes=new Uint8Array(16);
+    window.crypto.getRandomValues(bytes);
+    bytes[6]=(bytes[6]&15)|64;
+    bytes[8]=(bytes[8]&63)|128;
+    result.textContent=[...bytes].map(b=>b.toString(16).padStart(2,"0")).join("").replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/,"$1-$2-$3-$4-$5");
+    return;
+  }
+  result.textContent="Navigateur non compatible.";
 }
-
-document.getElementById("uuidRun").addEventListener("click",generateUuid);
+const uuidRun=document.getElementById("uuidRun");
+if(uuidRun)uuidRun.addEventListener("click",generateUuid);
 generatePassword();
