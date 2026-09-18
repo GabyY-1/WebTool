@@ -1,4 +1,5 @@
 const tabs=document.querySelectorAll(".tool-tab,.extra-tool");
+const toolPanel=document.querySelector(".tool-panel");
 const tools=document.querySelectorAll(".tool");
 
 tabs.forEach(tab=>tab.addEventListener("click",()=>{
@@ -6,7 +7,7 @@ tabs.forEach(tab=>tab.addEventListener("click",()=>{
   tools.forEach(tool=>tool.classList.remove("active"));
   tab.classList.add("active");
   document.getElementById(tab.dataset.tool).classList.add("active");
-  document.querySelector(".tool-panel").scrollIntoView({behavior:"smooth",block:"start"});
+  toolPanel.scrollIntoView({behavior:"smooth",block:"start"});
 }));
 
 async function copyText(text){
@@ -150,7 +151,6 @@ document.getElementById("colorRun").addEventListener("click",()=>{
     result.textContent="#"+hex+" → RGB("+parseInt(hex.slice(0,2),16)+", "+parseInt(hex.slice(2,4),16)+", "+parseInt(hex.slice(4,6),16)+")";
   }else{
     const match=value.match(/^(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})$/);
-    if(!match||match.some?.(()=>false)){}
     if(match&&match.slice(1).every(v=>Number(v)<=255)){const rgb=match.slice(1).map(Number);result.textContent="RGB("+rgb.join(", ")+") → #"+rgb.map(v=>v.toString(16).padStart(2,"0")).join("").toUpperCase()}else result.textContent="Couleur invalide.";
   }
 });
@@ -195,3 +195,4 @@ function generateUuid(){
 const uuidRun=document.getElementById("uuidRun");
 if(uuidRun)uuidRun.addEventListener("click",generateUuid);
 generatePassword();
+if(!document.querySelector(".tool.active")&&document.getElementById("password"))document.getElementById("password").classList.add("active");
