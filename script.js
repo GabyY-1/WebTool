@@ -175,4 +175,12 @@ document.getElementById("usernameRun").addEventListener("click",()=>{
   document.getElementById("usernameResult").textContent=a[Math.floor(Math.random()*a.length)]+b[Math.floor(Math.random()*b.length)]+Math.floor(Math.random()*1000);
 });
 
+const uuidTool=document.getElementById("uuid");
+function generateUuid(){
+  if(!uuidTool)return;
+  const result=document.getElementById("uuidResult");
+  if(result)result.textContent=crypto.randomUUID();
+}
+
+document.getElementById("uuidRun").addEventListener("click",generateUuid);
 generatePassword();
