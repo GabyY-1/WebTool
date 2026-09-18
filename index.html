@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebTool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>WebTool</h1>
+      <p>Des outils simples, au même endroit.</p>
+    </header>
+
+    <nav class="tools-nav">
+      <button class="tool-tab active" data-tool="password">Mot de passe</button>
+      <button class="tool-tab" data-tool="counter">Compteur</button>
+      <button class="tool-tab" data-tool="converter">Convertisseur</button>
+      <button class="tool-tab" data-tool="stopwatch">Chronomètre</button>
+      <button class="tool-tab" data-tool="timer">Minuteur</button>
+      <button class="tool-tab" data-tool="dates">Dates</button>
+      <button class="tool-tab" data-tool="case">Texte</button>
+      <button class="tool-tab" data-tool="cleaner">Nettoyeur</button>
+      <button class="tool-tab" data-tool="random">Aléatoire</button>
+      <button class="tool-tab" data-tool="url">URL</button>
+    </nav>
+
+    <section class="tool-panel">
+      <div class="tool" id="password">
+        <h2>Générateur de mot de passe</h2>
+        <p>Crée un mot de passe aléatoire.</p>
+        <div class="result-row"><input id="passwordResult" readonly><button id="generatePassword">Générer</button><button data-copy-input="passwordResult">Copier</button></div>
+        <label>Longueur <input id="passwordLength" type="range" min="6" max="40" value="16"><span id="passwordLengthValue">16</span></label>
+      </div>
+
+      <div class="tool" id="counter">
+        <h2>Compteur de caractères</h2>
+        <p>Compte les caractères, mots et lignes.</p>
+        <textarea id="counterText" placeholder="Écris ton texte ici..."></textarea>
+        <div class="stats"><div><strong id="charCount">0</strong><span>Caractères</span></div><div><strong id="wordCount">0</strong><span>Mots</span></div><div><strong id="lineCount">0</strong><span>Lignes</span></div></div>
+      </div>
+
+      <div class="tool" id="converter">
+        <h2>Convertisseur d'unités</h2>
+        <p>Convertis rapidement des longueurs, poids et températures.</p>
+        <div class="form-grid">
+          <input id="convertValue" type="number" placeholder="Valeur">
+          <select id="convertType"><option value="km-mi">Kilomètres → miles</option><option value="mi-km">Miles → kilomètres</option><option value="kg-lb">Kilogrammes → livres</option><option value="lb-kg">Livres → kilogrammes</option><option value="c-f">Celsius → Fahrenheit</option><option value="f-c">Fahrenheit → Celsius</option></select>
+        </div>
+        <div class="result" id="convertResult">0</div>
+      </div>
+
+      <div class="tool" id="stopwatch">
+        <h2>Chronomètre</h2>
+        <p>Mesure une durée avec précision.</p>
+        <div class="timer-display" id="stopwatchDisplay">00:00:00</div>
+        <div class="actions"><button id="stopwatchStart">Démarrer</button><button id="stopwatchReset">Réinitialiser</button></div>
+      </div>
+
+      <div class="tool" id="timer">
+        <h2>Minuteur</h2>
+        <p>Définis une durée et lance le compte à rebours.</p>
+        <div class="form-grid"><input id="timerMinutes" type="number" min="0" placeholder="Minutes"><input id="timerSeconds" type="number" min="0" max="59" placeholder="Secondes"></div>
+        <div class="timer-display" id="timerDisplay">00:00</div>
+        <div class="actions"><button id="timerStart">Démarrer</button><button id="timerReset">Réinitialiser</button></div>
+      </div>
+
+      <div class="tool" id="dates">
+        <h2>Calculateur de dates</h2>
+        <p>Calcule le nombre de jours entre deux dates.</p>
+        <div class="form-grid"><input id="dateStart" type="date"><input id="dateEnd" type="date"></div>
+        <div class="result" id="dateResult">Sélectionne deux dates.</div>
+      </div>
+
+      <div class="tool" id="case">
+        <h2>Convertisseur de texte</h2>
+        <p>Change rapidement la casse de ton texte.</p>
+        <textarea id="caseText" placeholder="Ton texte..."></textarea>
+        <div class="actions"><button data-case="upper">MAJUSCULES</button><button data-case="lower">minuscules</button><button data-case="capitalize">Première lettre</button></div>
+      </div>
+
+      <div class="tool" id="cleaner">
+        <h2>Nettoyeur de texte</h2>
+        <p>Supprime les espaces inutiles et nettoie ton texte.</p>
+        <textarea id="cleanText" placeholder="Ton texte..."></textarea>
+        <button id="cleanButton">Nettoyer</button>
+      </div>
+
+      <div class="tool" id="random">
+        <h2>Générateur aléatoire</h2>
+        <p>Choisis une valeur aléatoire entre deux nombres.</p>
+        <div class="form-grid"><input id="randomMin" type="number" value="1"><input id="randomMax" type="number" value="100"></div>
+        <button id="randomGenerate">Générer</button>
+        <div class="result" id="randomResult">—</div>
+      </div>
+
+      <div class="tool" id="url">
+        <h2>Encodeur / décodeur URL</h2>
+        <p>Encode ou décode une adresse ou un texte URL.</p>
+        <textarea id="urlText" placeholder="https://exemple.com/mon texte"></textarea>
+        <div class="actions"><button id="encodeUrl">Encoder</button><button id="decodeUrl">Décoder</button></div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
