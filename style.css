@@ -30,7 +30,7 @@ label input{flex:1}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1
 
 .extra-tools{background:white;border:1px solid #e4e5e9;border-radius:20px;padding:24px;box-shadow:0 8px 30px rgba(20,20,30,.05);margin:0}
 .extra-tools-header{margin-bottom:18px}.extra-tools-header h2{font-size:21px}
-.extra-tools-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.extra-tools-grid{display:grid !important;grid-template-columns:repeat(5,minmax(0,1fr)) !important;gap:10px;width:100%}
 .extra-tool{display:flex;align-items:center;justify-content:center;text-align:center;background:#f8f8fa;color:#17181c;border:1px solid #e2e3e8;padding:15px;border-radius:12px;transition:.2s}
 .extra-tool:hover{background:white;border-color:#cfd1d8;opacity:1;transform:translateY(-2px)}
 .extra-tool strong{font-size:15px}
@@ -45,7 +45,7 @@ h1{font-size:34px}
 .stats{grid-template-columns:1fr}
 .actions button{flex:1}
 .extra-tools{padding:20px}
-.extra-tools-grid{grid-template-columns:repeat(2,1fr)}
+.extra-tools-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
 }
 @media(max-width:400px){
 .tools-nav-grid{grid-template-columns:1fr}
