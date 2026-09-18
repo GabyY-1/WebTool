@@ -1,0 +1,25 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;font-family:Arial,sans-serif;background:#f4f5f8;color:#17181c}
+button,input,select,textarea{font:inherit}
+button{border:0;border-radius:9px;padding:10px 14px;background:#17181c;color:white;cursor:pointer;transition:.2s}
+button:hover{opacity:.85;transform:translateY(-1px)}
+.container{width:min(950px,calc(100% - 32px));margin:auto;padding:55px 0}
+header{margin-bottom:28px}h1{font-size:42px;margin-bottom:8px}header p{color:#6d7078}
+.tools-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px}
+.tool-tab{background:white;color:#333;border:1px solid #e2e3e8}
+.tool-tab.active{background:#17181c;color:white}
+.tool-panel{background:white;border:1px solid #e4e5e9;border-radius:20px;padding:28px;box-shadow:0 8px 30px rgba(20,20,30,.05)}
+.tool{display:none}.tool.active{display:block}.tool h2{margin-bottom:6px}.tool>p{color:#777a82;margin-bottom:22px}
+.result-row,.actions,.form-grid{display:flex;gap:10px}.result-row input{flex:1}
+input,select,textarea{width:100%;border:1px solid #dddfe5;border-radius:10px;padding:12px;background:#fff;color:#17181c;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#777}
+textarea{min-height:180px;resize:vertical}
+label{display:flex;align-items:center;gap:12px;margin-top:18px;color:#555}
+label input{flex:1}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.stats div,.result{padding:18px;border:1px solid #e5e6ea;border-radius:12px}.stats strong{display:block;font-size:25px}.stats span{color:#777a82;font-size:13px}
+.result{margin-top:14px;font-size:20px;font-weight:bold;word-break:break-word}
+.timer-display{text-align:center;font-size:54px;font-weight:bold;padding:35px 0}.actions{flex-wrap:wrap}
+.tool .actions{margin-top:14px}
+#case .actions{margin-top:14px}
+#cleanButton,#randomGenerate{margin-top:14px}
+@media(max-width:700px){.container{padding:35px 0}h1{font-size:34px}.tools-nav{grid-template-columns:repeat(2,1fr)}.tool-panel{padding:20px}.result-row,.form-grid{flex-direction:column}.timer-display{font-size:40px}.stats{grid-template-columns:1fr}.actions button{flex:1}}
+@media(max-width:400px){.tools-nav{grid-template-columns:1fr}.container{width:min(100% - 20px,950px)}}
