@@ -9,7 +9,9 @@ header{margin-bottom:36px}h1{font-size:42px;margin-bottom:8px}header p{color:#6d
 .tool-panel{background:white;border:1px solid #e4e5e9;border-radius:20px;padding:28px;box-shadow:0 8px 30px rgba(20,20,30,.05);margin-bottom:28px}
 .tool{display:none}.tool.active{display:block}.tool h2{margin-bottom:6px}.tool>p{color:#777a82;margin-bottom:22px}
 
-.tools-nav{background:white;border:1px solid #e4e5e9;border-radius:20px;padding:24px;box-shadow:0 8px 30px rgba(20,20,30,.05);display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:0 0 28px}
+.tools-nav{background:white;border:1px solid #e4e5e9;border-radius:20px;padding:24px;box-shadow:0 8px 30px rgba(20,20,30,.05);margin:0 0 28px}
+.tools-nav-header{margin-bottom:18px}.tools-nav-header h2{font-size:21px;margin-bottom:5px}.tools-nav-header p{color:#777a82;font-size:14px}
+.tools-nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .tool-tab{background:#f8f8fa;color:#17181c;border:1px solid #e2e3e8}
 .tool-tab:hover{background:white;border-color:#cfd1d8;opacity:1}
 .tool-tab.active{background:#17181c;color:white;border-color:#17181c}
@@ -37,7 +39,7 @@ label input{flex:1}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1
 .container{padding:35px 0}
 h1{font-size:34px}
 .tool-panel{padding:20px;margin-bottom:22px}
-.tools-nav{grid-template-columns:repeat(2,1fr);padding:20px;margin-bottom:22px}
+.tools-nav{padding:20px;margin-bottom:22px}.tools-nav-grid{grid-template-columns:repeat(2,1fr)}
 .result-row,.form-grid{flex-direction:column}
 .timer-display{font-size:40px}
 .stats{grid-template-columns:1fr}
@@ -46,7 +48,7 @@ h1{font-size:34px}
 .extra-tools-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:400px){
-.tools-nav{grid-template-columns:1fr}
+.tools-nav-grid{grid-template-columns:1fr}
 .container{width:min(100% - 20px,950px)}
 .extra-tools-grid{grid-template-columns:1fr}
 }
