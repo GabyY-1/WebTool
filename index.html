@@ -101,6 +101,97 @@
         <textarea id="urlText" placeholder="https://exemple.com/mon texte"></textarea>
         <div class="actions"><button id="encodeUrl">Encoder</button><button id="decodeUrl">Décoder</button></div>
       </div>
+
+      <div class="tool" id="calculator">
+        <h2>Calculatrice</h2>
+        <p>Effectue rapidement un calcul simple.</p>
+        <input id="calculatorInput" type="text" placeholder="Exemple : 12 * 5 + 8">
+        <div class="result" id="calculatorResult">—</div>
+        <button id="calculatorRun">Calculer</button>
+      </div>
+
+      <div class="tool" id="percentage">
+        <h2>Pourcentage</h2>
+        <p>Calcule un pourcentage d'une valeur.</p>
+        <div class="form-grid"><input id="percentageValue" type="number" placeholder="Valeur"><input id="percentageRate" type="number" placeholder="Pourcentage"></div>
+        <div class="result" id="percentageResult">—</div>
+        <button id="percentageRun">Calculer</button>
+      </div>
+
+      <div class="tool" id="roman">
+        <h2>Chiffres romains</h2>
+        <p>Convertis un nombre entre 1 et 3999.</p>
+        <input id="romanValue" type="number" min="1" max="3999" placeholder="Nombre">
+        <div class="result" id="romanResult">—</div>
+        <button id="romanRun">Convertir</button>
+      </div>
+
+      <div class="tool" id="lorem">
+        <h2>Lorem Ipsum</h2>
+        <p>Génère rapidement du texte de remplissage.</p>
+        <input id="loremCount" type="number" min="1" max="20" value="3" placeholder="Nombre de paragraphes">
+        <textarea id="loremResult" readonly></textarea>
+        <button id="loremRun">Générer</button>
+      </div>
+
+      <div class="tool" id="dice">
+        <h2>Lanceur de dés</h2>
+        <p>Lance un ou plusieurs dés à six faces.</p>
+        <input id="diceCount" type="number" min="1" max="20" value="1" placeholder="Nombre de dés">
+        <div class="result" id="diceResult">—</div>
+        <button id="diceRun">Lancer</button>
+      </div>
+
+      <div class="tool" id="color">
+        <h2>Convertisseur HEX / RGB</h2>
+        <p>Convertis une couleur entre HEX et RGB.</p>
+        <input id="colorValue" type="text" placeholder="#ff6600 ou 255, 102, 0">
+        <div class="result" id="colorResult">—</div>
+        <button id="colorRun">Convertir</button>
+      </div>
+
+      <div class="tool" id="time">
+        <h2>Convertisseur de temps</h2>
+        <p>Convertis des secondes, minutes et heures.</p>
+        <div class="form-grid"><input id="timeValue" type="number" placeholder="Valeur"><select id="timeType"><option value="s-m">Secondes → minutes</option><option value="m-s">Minutes → secondes</option><option value="m-h">Minutes → heures</option><option value="h-m">Heures → minutes</option></select></div>
+        <div class="result" id="timeResult">—</div>
+        <button id="timeRun">Convertir</button>
+      </div>
+
+      <div class="tool" id="size">
+        <h2>Convertisseur de tailles</h2>
+        <p>Convertis des octets, Ko, Mo et Go.</p>
+        <div class="form-grid"><input id="sizeValue" type="number" placeholder="Valeur"><select id="sizeType"><option value="b-kb">Octets → Ko</option><option value="kb-b">Ko → octets</option><option value="mb-gb">Mo → Go</option><option value="gb-mb">Go → Mo</option></select></div>
+        <div class="result" id="sizeResult">—</div>
+        <button id="sizeRun">Convertir</button>
+      </div>
+
+      <div class="tool" id="username">
+        <h2>Générateur de pseudo</h2>
+        <p>Crée un pseudo aléatoire en quelques secondes.</p>
+        <div class="result" id="usernameResult">—</div>
+        <button id="usernameRun">Générer</button>
+      </div>
+    </section>
+
+    <section class="extra-tools">
+      <div class="extra-tools-header">
+        <div>
+          <h2>Autres outils</h2>
+          <p>Encore plus d'outils rapides à portée de clic.</p>
+        </div>
+      </div>
+      <div class="extra-tools-grid">
+        <button class="extra-tool" data-tool="calculator"><strong>Calculatrice</strong><span>Calculs rapides</span></button>
+        <button class="extra-tool" data-tool="percentage"><strong>Pourcentage</strong><span>Calcul de pourcentage</span></button>
+        <button class="extra-tool" data-tool="roman"><strong>Chiffres romains</strong><span>Convertisseur de nombres</span></button>
+        <button class="extra-tool" data-tool="lorem"><strong>Lorem Ipsum</strong><span>Texte de remplissage</span></button>
+        <button class="extra-tool" data-tool="dice"><strong>Lanceur de dés</strong><span>Dés à six faces</span></button>
+        <button class="extra-tool" data-tool="color"><strong>HEX / RGB</strong><span>Couleurs</span></button>
+        <button class="extra-tool" data-tool="time"><strong>Temps</strong><span>Unités de temps</span></button>
+        <button class="extra-tool" data-tool="size"><strong>Tailles</strong><span>Octets et stockage</span></button>
+        <button class="extra-tool" data-tool="username"><strong>Générateur de pseudo</strong><span>Pseudos aléatoires</span></button>
+      </div>
     </section>
   </main>
   <script src="script.js"></script>
